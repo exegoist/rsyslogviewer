@@ -1,0 +1,51 @@
+{% extends 'log/base.html' %}
+{% block search %}
+    {% if errors %}
+        {% for error in errors %}<span class="error"> {{ error }}</span>{% endfor %}
+    {% endif %}
+    <form action="" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Искать">
+    </form>
+<span class="search">Например: kvm, lvs1, CPU10, vapp и т.д.</span> 
+{% endblock search %}
+{% block table %}
+<div class="pagination">
+    <span class="step-links">
+        &larr;&nbsp;{% if events.has_previous %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.previous_page_number }}">СЮДА</a>{% else %}СЮДА{% endif %}
+        {% if events.has_next %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.next_page_number }}">ТУДА</a>{% else %}ТУДА{% endif %}&nbsp;&rarr;
+    </span>
+    <span class="current">
+        стр. {{ events.number }} из {{ events.paginator.num_pages }}
+    </span>
+</div>
+<table>
+<tbody>
+    <tr>
+     <th class="time"> Время </th>
+     <th class="facility"> Источник </th>
+     <th class="priority"> Степень важности </th>
+     <th class="source"> Хост </th>
+     <th class="message"> Сообщение </th>
+    </tr>
+{% for event in events %}
+    <tr>
+     <td class="time"> {{event.devicereportedtime}}</td>
+     <td class="facility"> {{event.facility}}</td>
+     <td class="priority"> {{event.priority}}</td>
+     <td class="source"> {{event.fromhost}}</td>
+     <td class="message"> {{event.message}}</td>
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+<div class="pagination">
+    <span class="step-links">
+        &larr;&nbsp;{% if events.has_previous %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.previous_page_number }}">СЮДА</a>{% else %}СЮДА{% endif %}
+        {% if events.has_next %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.next_page_number }}">ТУДА</a>{% else %}ТУДА{% endif %}&nbsp;&rarr;
+    </span>
+    <span class="current">
+        стр. {{ events.number }} из {{ events.paginator.num_pages }}
+    </span>
+</div>
+{% endblock table %} 

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Яндекс Логи</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+        <link href="{{ STATIC_URL }}img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+    </head>
+<body>
+<div id="navbar">
+<a href=/><h1>Яндекс Логи</h1></a>
+</div>
+<div id="search">
+     {% block search %}{% endblock search %}
+</div>
+<div id="container">
+     {% block table %}Empty page{% endblock table %}
+</div>
+</body>
+</html>

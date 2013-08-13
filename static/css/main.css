@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#navbar {
+    padding: 0px ;
+    padding-left: 2%;
+    margin: 0px;
+    background-color: white; 
+}
+
+#navbar a:link, #navbar a:visited { text-decoration: none; color: black;}
+
+h1 { 
+    font:200% Arial,sans-serif;
+    text-align: left; 
+    display:inline-block;
+}
+h1:first-letter { color: red;}
+
+#search {
+    padding: 5px 5px;
+    margin: 5px 2%;
+    background-color: lavender;
+}
+#container {
+    margin: 0 2%;
+    
+}
+#search span.search { font-size: 10pt; font-family: Verdana; padding: 0 5px; }
+#search span.error { color: red; font-size: 10pt; font-family: Verdana; padding: 0 5px; }
+i {color: red;}
+table {
+    table-layout: fixed; /* Фиксированная ширина ячеек */
+    width: 100%; /* Ширина таблицы */
+   }
+th {background-color:honeydew; color:chocolate;}
+th.time, td.time {width: 13%;}
+th.source, td.source {width: 5%;}
+th.facility, td.facility {width: 10%;}
+th.priority, td.priority {width: 7%;}
+tbody tr:nth-child(even) td {background-color: lavender/*#dbdbff*/;}
+tbody tr:nth-child(odd) td {background-color: linen/*#eeeeff*/;}
