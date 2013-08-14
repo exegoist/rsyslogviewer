@@ -7,9 +7,10 @@
 To install rsyslogviewer take a few steps:
 
 1. Install python, Django, MySQL-phyton (python-psycopg2).
-2. Provide you credentials to connect to database in `settings.py`. 
-3. Run manage.py syncdb ( After this step, tables 'Facilities' and 'Priorities' will be created. You must populate them with data in next step)
-4. Run inserts:
+2. Clone [rsyslogviewer](https://github.com/exegoist/rsyslogviewer/)`git clone https://github.com/exegoist/rsyslogviewer.git` to your server.
+3. Provide you credentials to connect to database in `rsyslogviewer/settings.py`. 
+4. Run manage.py syncdb ( After this step, tables 'Facilities' and 'Priorities' will be created. You must populate them with data in next step)
+5. Run inserts:
 ``` sql
    INSERT INTO `facilities` (`id`, `facility`) VALUES
 (0, 'kernel'),
@@ -47,4 +48,4 @@ To install rsyslogviewer take a few steps:
 (6, 'Informational'),
 (7, 'Debug');
 ```
-5. Configure your web-server to handle `rsyslogviewer` and fire up!
+7. Configure your web-server to handle `rsyslogviewer` and fire up!
