@@ -1,6 +1,6 @@
 # RSYSLOGVIEWER #
 
-`rsyslogviewer` is a simple application for monitoring and search events through log collected in a database. It can be mysql-server or postgresql-server. `rsyslog` know how to write events to both of them. But in case of postgre, you have to change name of tables and fields in `log/models.py to lowercase.
+`rsyslogviewer` is a simple application for monitoring and search events through log collected in a database. It can be mysql-server or postgresql-server. `rsyslog` know how to write events to both of them. But in case of postgre, you have to change name of tables and fields in `log/models.py` to lowercase.
 
 ## Installation and configuration ##
 
