@@ -5,28 +5,28 @@
     {% endif %}
     <form action="" method="get">
         <input type="text" name="q">
-        <input type="submit" value="Искать">
+        <input type="submit" value="Search">
     </form>
-<span class="search">Например: kvm, lvs1, CPU10, vapp и т.д.</span> 
+<span class="search">For example: kvm, lvs, CPU10 etc.</span> 
 {% endblock search %}
 {% block table %}
 <div class="pagination">
     <span class="step-links">
-        &larr;&nbsp;{% if events.has_previous %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.previous_page_number }}">СЮДА</a>{% else %}СЮДА{% endif %}
-        {% if events.has_next %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.next_page_number }}">ТУДА</a>{% else %}ТУДА{% endif %}&nbsp;&rarr;
+        &larr;&nbsp;{% if events.has_previous %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.previous_page_number }}">HERE</a>{% else %}HERE{% endif %}
+        {% if events.has_next %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.next_page_number }}">THERE</a>{% else %}THERE{% endif %}&nbsp;&rarr;
     </span>
     <span class="current">
-        стр. {{ events.number }} из {{ events.paginator.num_pages }}
+        page {{ events.number }} from {{ events.paginator.num_pages }}
     </span>
 </div>
 <table>
 <tbody>
     <tr>
-     <th class="time"> Время </th>
-     <th class="facility"> Источник </th>
-     <th class="priority"> Степень важности </th>
-     <th class="source"> Хост </th>
-     <th class="message"> Сообщение </th>
+     <th class="time">Time</th>
+     <th class="facility">Facility</th>
+     <th class="priority">Priority </th>
+     <th class="source">From host</th>
+     <th class="message">Message</th>
     </tr>
 {% for event in events %}
     <tr>
@@ -41,11 +41,11 @@
 </table>
 <div class="pagination">
     <span class="step-links">
-        &larr;&nbsp;{% if events.has_previous %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.previous_page_number }}">СЮДА</a>{% else %}СЮДА{% endif %}
-        {% if events.has_next %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.next_page_number }}">ТУДА</a>{% else %}ТУДА{% endif %}&nbsp;&rarr;
+        &larr;&nbsp;{% if events.has_previous %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.previous_page_number }}">THERE</a>{% else %}HERE{% endif %}
+        {% if events.has_next %}<a href="?{% if query %}q={{ query }}&amp;{% endif %}page={{ events.next_page_number }}">THERE</a>{% else %}THERE{% endif %}&nbsp;&rarr;
     </span>
     <span class="current">
-        стр. {{ events.number }} из {{ events.paginator.num_pages }}
+        page {{ events.number }} from {{ events.paginator.num_pages }}
     </span>
 </div>
 {% endblock table %} 
